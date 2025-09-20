@@ -3,32 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tun Nyein - Portfolio</title>
+  <title>Tun Nyein | Cloud & DevOps Engineer</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
-      <h1>Tun Nyein</h1>
-      <p>Cloud & DevOps Engineer</p>
-      <div class="social-links">
-        <a href="https://github.com/TunNyein" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/tunnyein" target="_blank">LinkedIn</a>
-      </div>
-      <button id="contactBtn">Contact Me</button>
-    </div>
-  </header>
 
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Tun Nyein, transitioning from IT to Cloud & DevOps engineering. I love automating workflows, deploying microservices, and working with AWS & Kubernetes.</p>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <h1 class="logo">Tun Nyein</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-container">
+      <img src="profile.jpg" alt="Tun Nyein" class="profile-pic">
+      <h2>Hello, I'm Tun Nyein</h2>
+      <p>Cloud & DevOps Engineer | Building secure, scalable, and automated cloud environments</p>
+      <a href="mailto:tunnyein.ict@gmail.com" class="btn-contact">📧 Contact Me</a>
+    </div>
   </section>
 
+  <!-- About Me -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Cloud and DevOps Engineer transitioning from 10+ years of IT system and network administration into cloud platforms, automation, and containerized environments. Passionate about building scalable, secure, and automated cloud infrastructure.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section bg-light">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Harbor Registry</h3>
+          <p>Deployed on AWS EC2 using Terraform + ACME + Route 53 TLS for secure container storage</p>
+        </div>
+        <div class="project-card">
+          <h3>AWS VPC Peering</h3>
+          <p>Implemented intra-region and module-based VPC peering infrastructure with Terraform</p>
+        </div>
+        <div class="project-card">
+          <h3>AWS SSM Integration</h3>
+          <p>Configured SSM Session Manager with VPC Endpoints and S3 integration for secure EC2 access</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Experience</h2>
+      <ul class="experience-list">
+        <li><strong>IT Officer</strong> at ADRA Myanmar (Aug 2024 – Present)</li>
+        <li><strong>ICT Specialist</strong> at ICRC (Jun 2019 – Jul 2024)</li>
+        <li><strong>IT Officer</strong> at IRC (Aug 2018 – May 2019)</li>
+        <li><strong>Network Engineer</strong> at GKFF (Jun 2012 – Jul 2018)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section bg-light">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <span>AWS</span>
+        <span>Azure</span>
+        <span>Terraform</span>
+        <span>Kubernetes</span>
+        <span>Docker</span>
+        <span>GitHub Actions</span>
+        <span>Linux</span>
+        <span>Windows Server</span>
+        <span>Networking</span>
+        <span>Active Directory</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2>Education</h2>
+      <ul>
+        <li>NCC Level 4 International Diploma in Computing (UK Higher National Diploma)</li>
+        <li>B.A Myanmar</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; <span id="year"></span> Tun Nyein. All rights reserved.</p>
+    <p>© 2025 Tun Nyein</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
