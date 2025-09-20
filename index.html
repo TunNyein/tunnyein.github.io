@@ -3,80 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tun Nyein | Cloud & DevOps Engineer</title>
+  <title>Tun Nyein - Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-container">
+  <header class="hero">
+    <div class="container">
+      <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
       <h1>Tun Nyein</h1>
       <p>Cloud & DevOps Engineer</p>
-      <p>📧 <a href="mailto:tunnyein.ict@gmail.com">tunnyein.ict@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://github.com/TunNyein" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/tunnyein" target="_blank">LinkedIn</a>
+      </div>
+      <button id="contactBtn">Contact Me</button>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-    </ul>
-  </nav>
-
-  <!-- Profile Section -->
-  <section id="profile">
-    <img src="profile.jpg" alt="Tun Nyein" class="profile-pic">
-    <h2>Hello, I'm Tun Nyein</h2>
-    <p>Transitioning from IT administration to Cloud & DevOps engineering. I build scalable, secure, and automated cloud environments.</p>
-  </section>
-
-  <!-- About Me -->
-  <section id="about" class="card">
+  <section class="about" id="about">
     <h2>About Me</h2>
-    <p>Cloud and DevOps Engineer with 10+ years of IT system and network administration experience, now specializing in cloud platforms, automation, and containerized environments.</p>
+    <p>Hello! I’m Tun Nyein, transitioning from IT to Cloud & DevOps engineering. I love automating workflows, deploying microservices, and working with AWS & Kubernetes.</p>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="card">
-    <h2>Projects</h2>
-    <ul>
-      <li>Harbor Registry on AWS EC2 with Terraform + ACME + Route 53 TLS</li>
-      <li>AWS VPC Peering Infrastructure with Terraform</li>
-      <li>AWS SSM Session Manager with VPC Endpoints and S3 Integration</li>
-    </ul>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="card">
-    <h2>Experience</h2>
-    <ul>
-      <li>IT Officer at ADRA Myanmar (Aug 2024 – Present)</li>
-      <li>ICT Specialist at ICRC (Jun 2019 – Jul 2024)</li>
-      <li>IT Officer at IRC (Aug 2018 – May 2019)</li>
-      <li>Network Engineer at GKFF (Jun 2012 – Jul 2018)</li>
-    </ul>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="card">
-    <h2>Technical Skills</h2>
-    <p>AWS, Azure, Terraform, Kubernetes, Docker, GitHub Actions, Linux, Windows Server, Networking, Active Directory</p>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="card">
-    <h2>Education</h2>
-    <p>NCC Level 4 International Diploma in Computing (UK Higher National Diploma)</p>
-    <p>B.A Myanmar</p>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <p>© 2025 Tun Nyein</p>
+    <p>&copy; <span id="year"></span> Tun Nyein. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
