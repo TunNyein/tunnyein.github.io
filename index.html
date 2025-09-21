@@ -97,10 +97,15 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
+    /* Justify About Me text */
+    .about-card p {
+      text-align: justify;
+    }
+
     /* Section Titles */
     .section-title {
       font-size: 24px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border-bottom: 2px solid #ffffff;
       display: inline-block;
       padding-bottom: 5px;
@@ -113,6 +118,14 @@
     }
 
     /* Projects */
+    .section#projects {
+      text-align: center;
+    }
+    .project-item {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+    }
     .project-item h4 {
       font-size: 18px;
       margin-bottom: 10px;
@@ -124,11 +137,20 @@
     }
 
     /* Certifications */
+    .section#certifications {
+      text-align: center;
+    }
     .cert img {
       width: 80px;
       height: auto;
       display: block;
-      margin-bottom: 10px;
+      margin: 0 auto 10px auto;
+    }
+    .cert {
+      display: inline-block;
+      width: 200px;
+      margin: 15px;
+      vertical-align: top;
     }
     .cert a {
       color: #0077cc;
@@ -182,7 +204,7 @@
 
   <!-- Projects -->
   <section id="projects" class="section">
-    <h3 class="section-title">Projects</h3>
+    <h3 class="section-title">🚀 Projects</h3>
     <div class="project-item">
       <h4>AWS SSM Project with S3 Bucket</h4>
       <p>Automated EC2 management using AWS Systems Manager (SSM) with secure S3 logging for auditing.</p>
@@ -217,7 +239,7 @@
 
   <!-- Experiences -->
   <section id="experiences" class="section">
-    <h3 class="section-title">Experiences</h3>
+    <h3 class="section-title">💼 Experiences</h3>
     <div class="timeline-item">
       <h4>IT Officer - ADRA Myanmar (2024–Present)</h4>
       <p>Managing cloud & IT infrastructure while transitioning into DevOps engineering.</p>
@@ -234,7 +256,7 @@
 
   <!-- Certifications -->
   <section id="certifications" class="section">
-    <h3 class="section-title">Certifications</h3>
+    <h3 class="section-title">📜 Certifications</h3>
     <div class="cert">
       <img src="images/cka_from_cncfsite__281_29.png" alt="AWS Cert" />
       <p><a href="https://www.credly.com/badges/d8c25bb1-b2ec-47ba-9916-45170d312bce/public_url" target="_blank" rel="noopener">AWS Certified Solutions Architect</a></p>
