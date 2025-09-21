@@ -1,73 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tun Nyein - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <ul>
-      <li><a href="#home" onclick="showSection('home')">HOME</a></li>
-      <li><a href="#projects" onclick="showSection('projects')">PROJECTS</a></li>
-      <li><a href="#experiences" onclick="showSection('experiences')">EXPERIENCES</a></li>
-      <li><a href="#certifications" onclick="showSection('certifications')">CERTIFICATIONS</a></li>
+      <li><a href="#home" data-target="home">HOME</a></li>
+      <li><a href="#projects" data-target="projects">PROJECTS</a></li>
+      <li><a href="#experiences" data-target="experiences">EXPERIENCES</a></li>
+      <li><a href="#certifications" data-target="certifications">CERTIFICATIONS</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="section active hero">
-    <img src="images/tn-img.jpeg" alt="Profile Picture" class="profile-img">
+  <!-- Home (hero) -->
+  <section id="home" class="section hero">
+    <img src="images/tn-img.jpeg" alt="Profile Picture" class="profile-img" />
     <h1>Tun Nyein</h1>
     <h2>Cloud & DevOps Engineer</h2>
 
     <p><strong>Address:</strong> Yangon, Myanmar</p>
     <p><strong>Email:</strong> tunnyein.ict@gmail.com</p>
 
-    <a href="https://drive.usercontent.google.com/u/0/uc?id=1j4zU246VTm88dqG1m4GJ4bLB3CXBI_i0&export=download" class="btn">DOWNLOAD CV ↓</a>
+    <a href="https://drive.usercontent.google.com/u/0/uc?id=1j4zU246VTm88dqG1m4GJ4bLB3CXBI_i0&export=download"
+       class="btn" target="_blank" rel="noopener">DOWNLOAD CV ↓</a>
 
     <div class="social-links">
-      <a href="https://gitlab.com/tunnyein">Gitlab</a> |
-      <a href="https://www.linkedin.com/in/nyein-tun/">LinkedIn</a> |
-      <a href="#">Blog</a>
+      <a href="https://gitlab.com/tunnyein" target="_blank" rel="noopener">Gitlab</a> |
+      <a href="https://www.linkedin.com/in/nyein-tun/" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="#" target="_blank" rel="noopener">Blog</a>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
+  <!-- About (will show together with Home) -->
+  <section id="about" class="section about-card">
     <h3>👋 About Me</h3>
     <p>
-      Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system and network administration into cloud platforms,
-      automation, and containerized environments. I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation.
+      Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system and network administration into cloud
+      platforms, automation, and containerized environments. I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation.
       I’m passionate about simplifying infrastructure with Infrastructure as Code, containerized workloads, and DevOps best practices.
     </p>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects" class="section">
     <h3>🚀 Projects</h3>
     <div class="card-container">
       <div class="card">
-        <h4>AWS SSM Project with S3 Bukect</h4>
-        <p>Deployed microservices using ECS & ECR with CI/CD pipeline.</p>
-        <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank">View on GitLab →</a>
+        <h4>AWS SSM Project with S3 Bucket</h4>
+        <p>SSM automation with S3 logging and secure access patterns.</p>
+        <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank" rel="noopener">View on GitLab →</a>
       </div>
+
       <div class="card">
         <h4>Harbor Registry on AWS EC2</h4>
-        <p>Built private container registry with Terraform automation.</p>
-        <a href="https://gitlab.com/tunnyein" target="_blank">View on GitLab →</a>
+        <p>Private container registry deployed on EC2 with Terraform automation.</p>
+        <a href="https://gitlab.com/tunnyein" target="_blank" rel="noopener">View on GitLab →</a>
       </div>
+
       <div class="card">
         <h4>Terraform VPC Automation</h4>
-        <p>Created reusable Terraform module for VPC, subnets, and TGW.</p>
-        <a href="https://gitlab.com/tunnyein" target="_blank">View on GitLab →</a>
+        <p>Reusable Terraform modules for VPC, subnets, TGW, and routing patterns.</p>
+        <a href="https://gitlab.com/tunnyein" target="_blank" rel="noopener">View on GitLab →</a>
       </div>
     </div>
   </section>
 
-  <!-- Experiences Section -->
+  <!-- Experiences -->
   <section id="experiences" class="section">
     <h3>💼 Experiences</h3>
     <div class="timeline">
@@ -86,46 +89,64 @@
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Certifications -->
   <section id="certifications" class="section">
     <h3>📜 Certifications</h3>
     <div class="cert-grid">
       <div class="cert">
-        <img src="images/aws.png" alt="AWS Certification">
-        <p><a href="https://www.credly.com/" target="_blank">AWS Certified Solutions Architect</a></p>
+        <img src="images/aws.png" alt="AWS Cert" />
+        <p><a href="https://www.credly.com/" target="_blank" rel="noopener">AWS Certified Solutions Architect</a></p>
       </div>
       <div class="cert">
-        <img src="images/terraform.png" alt="Terraform Certification">
-        <p><a href="https://www.credly.com/" target="_blank">HashiCorp Certified: Terraform Associate</a></p>
+        <img src="images/terraform.png" alt="Terraform Cert" />
+        <p><a href="https://www.credly.com/" target="_blank" rel="noopener">HashiCorp: Terraform Associate</a></p>
       </div>
       <div class="cert">
-        <img src="images/kubernetes.png" alt="Kubernetes Certification">
-        <p><a href="https://www.credly.com/" target="_blank">Certified Kubernetes Administrator (CKA)</a></p>
+        <img src="images/kubernetes.png" alt="Kubernetes Cert" />
+        <p><a href="https://www.credly.com/" target="_blank" rel="noopener">Certified Kubernetes Administrator (CKA)</a></p>
       </div>
     </div>
   </section>
 
-  <!-- JS -->
+  <!-- Script (no nested script tags) -->
   <script>
-    <script>
-  function showSection(id) {
-    // hide all sections
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    // Show/hide sections and highlight nav
+    function showSection(id) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
 
-    // show clicked section
-    document.getElementById(id).classList.add('active');
+      // If user clicked 'home', show home + about together
+      if (id === 'home') {
+        const homeEl = document.getElementById('home');
+        const aboutEl = document.getElementById('about');
+        if (homeEl) homeEl.classList.add('active');
+        if (aboutEl) aboutEl.classList.add('active');
+      } else {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('active');
+      }
 
-    // highlight navbar
-    document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
-    document.querySelector(`.navbar a[href="#${id}"]`).classList.add('active');
-  }
+      // Highlight active nav link
+      document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.navbar a[data-target="${id}"]`);
+      if (active) active.classList.add('active');
 
-  // Show home by default on page load
-  document.addEventListener("DOMContentLoaded", () => {
-    showSection('home');
-  });
+      // Scroll to top smoothly when switching
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
+    // Wire nav clicks + show default (home)
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.navbar a[data-target]').forEach(a => {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          showSection(this.dataset.target);
+        });
+      });
 
+      // default view: home (hero + about)
+      showSection('home');
+    });
   </script>
 </body>
 </html>
