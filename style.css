@@ -4,14 +4,14 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  background: none;   /* remove black background */
+  background: transparent !important;   /* force transparent */
   border: 3px solid #ddd;
   margin-bottom: 15px;
 }
 
-/* About Me text color */
+/* About Me card */
 .about-card {
-  background: #fff;
+  background: #fff !important;  /* force white background */
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 12px;
@@ -19,12 +19,13 @@
   margin-top: 20px;
 }
 
+/* About Me text */
 .about-card h3 {
   margin-bottom: 10px;
-  color: #333;
+  color: #000 !important;  /* force black title */
 }
 
 .about-card p {
-  color: #000;   /* make text black */
+  color: #000 !important;  /* force black text */
   line-height: 1.6;
 }
