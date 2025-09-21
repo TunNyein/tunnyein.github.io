@@ -1,34 +1,29 @@
-/* Hide all sections by default */
-.section {
-  display: none;
-  padding: 2rem;
+/* Navbar styling */
+.navbar {
+  background: #f5f5f5; /* light gray / white */
+  padding: 1rem;
+  text-align: center;
+  position: sticky; /* optional: keeps navbar on top */
+  top: 0;
+  z-index: 100;
 }
 
-/* Show only the active section */
+/* Body / sections below navbar */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #000; /* black background */
+  color: #fff; /* optional: make text readable on black */
+}
+
+/* All sections inside body */
+.section {
+  display: none; /* hide by default */
+  padding: 2rem;
+  background-color: transparent; /* keep the black from body */
+}
+
+/* Show active section */
 .section.active {
   display: block;
-}
-
-/* Keep existing styling for hero */
-.hero {
-  text-align: center;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 1rem auto;
-  border: 3px solid #ddd;
-}
-
-.about-card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 600px;
-  text-align: left;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
