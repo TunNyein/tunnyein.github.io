@@ -3,116 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tun Nyein | Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f6f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #222;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-    }
-
-    .section {
-      display: none;
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #444;
-    }
-  </style>
+  <title>Tun Nyein - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" onclick="showSection('home')">HOME</a></li>
+      <li><a href="#projects" onclick="showSection('projects')">PROJECTS</a></li>
+      <li><a href="#experiences" onclick="showSection('experiences')">EXPERIENCES</a></li>
+      <li><a href="#certifications" onclick="showSection('certifications')">CERTIFICATIONS</a></li>
+    </ul>
+  </nav>
 
-  <header>
+  <!-- Hero Section -->
+  <section id="home" class="section active hero">
+    <img src="images/tn-img.jpeg" alt="Profile Picture" class="profile-img">
     <h1>Tun Nyein</h1>
-    <p>Cloud & DevOps Engineer</p>
-    <nav>
-      <a onclick="showSection('about')">About</a>
-      <a onclick="showSection('projects')">Projects</a>
-      <a onclick="showSection('experience')">Experience</a>
-      <a onclick="showSection('skills')">Skills</a>
-      <a onclick="showSection('education')">Education</a>
-    </nav>
-  </header>
+    <h2>Cloud & DevOps Engineer</h2>
 
-  <div class="container">
-    <section id="about" class="section active">
-      <h2>About Me</h2>
-      <p>Cloud and DevOps Engineer transitioning from 10+ years of IT system and network administration into cloud platforms, automation, and containerized environments.</p>
-    </section>
+    <p><strong>Address:</strong> Yangon, Myanmar</p>
+    <p><strong>Email:</strong> tunnyein.ict@gmail.com</p>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li>Harbor Registry on AWS EC2 with Terraform</li>
-        <li>Kubernetes Microservices Deployment with Istio</li>
-        <li>Terraform VPC Peering & Transit Gateway Setup</li>
-      </ul>
-    </section>
+    <a href="https://drive.usercontent.google.com/u/0/uc?id=1j4zU246VTm88dqG1m4GJ4bLB3CXBI_i0&export=download" class="btn">DOWNLOAD CV ↓</a>
 
-    <section id="experience" class="section">
-      <h2>Experience</h2>
-      <p><strong>IT Officer</strong> – ADRA Myanmar (Aug 2024–Present)</p>
-      <p><strong>ICT Specialist</strong> – ICRC (2019–2024)</p>
-      <p><strong>IT Officer</strong> – IRC (2018–2019)</p>
-    </section>
+    <div class="social-links">
+      <a href="https://gitlab.com/tunnyein">Gitlab</a> |
+      <a href="https://www.linkedin.com/in/nyein-tun/">LinkedIn</a> |
+      <a href="#">Blog</a>
+    </div>
+  </section>
 
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <p>AWS, Terraform, Kubernetes, Docker, CI/CD, Microsoft 365, Networking</p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h3>👋 About Me</h3>
+    <p>
+      Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system and network administration into cloud platforms,
+      automation, and containerized environments. I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation.
+      I’m passionate about simplifying infrastructure with Infrastructure as Code, containerized workloads, and DevOps best practices.
+    </p>
+  </section>
 
-    <section id="education" class="section">
-      <h2>Education</h2>
-      <p>MCSE, CCNA, pursuing CKA and Terraform Associate certifications.</p>
-    </section>
-  </div>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h3>🚀 Projects</h3>
+    <div class="card-container">
+      <div class="card">
+        <h4>AWS SSM Project with S3 Bukect</h4>
+        <p>Deployed microservices using ECS & ECR with CI/CD pipeline.</p>
+        <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank">View on GitLab →</a>
+      </div>
+      <div class="card">
+        <h4>Harbor Registry on AWS EC2</h4>
+        <p>Built private container registry with Terraform automation.</p>
+        <a href="https://gitlab.com/tunnyein" target="_blank">View on GitLab →</a>
+      </div>
+      <div class="card">
+        <h4>Terraform VPC Automation</h4>
+        <p>Created reusable Terraform module for VPC, subnets, and TGW.</p>
+        <a href="https://gitlab.com/tunnyein" target="_blank">View on GitLab →</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- Experiences Section -->
+  <section id="experiences" class="section">
+    <h3>💼 Experiences</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>IT Officer - ADRA Myanmar (2024–Present)</h4>
+        <p>Managing cloud & IT infrastructure while transitioning into DevOps engineering.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>ICT Specialist - ICRC (2019–2024)</h4>
+        <p>Administered networks, servers, and security systems in mission-critical environments.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Network Engineer - GKFF (2012–2018)</h4>
+        <p>Designed and managed network infrastructure including satellite communications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section">
+    <h3>📜 Certifications</h3>
+    <div class="cert-grid">
+      <div class="cert">
+        <img src="images/aws.png" alt="AWS Certification">
+        <p><a href="https://www.credly.com/" target="_blank">AWS Certified Solutions Architect</a></p>
+      </div>
+      <div class="cert">
+        <img src="images/terraform.png" alt="Terraform Certification">
+        <p><a href="https://www.credly.com/" target="_blank">HashiCorp Certified: Terraform Associate</a></p>
+      </div>
+      <div class="cert">
+        <img src="images/kubernetes.png" alt="Kubernetes Certification">
+        <p><a href="https://www.credly.com/" target="_blank">Certified Kubernetes Administrator (CKA)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS -->
   <script>
     function showSection(id) {
       const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
+      sections.forEach(section => section.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
   </script>
