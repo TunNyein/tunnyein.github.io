@@ -1,11 +1,32 @@
-// // Update year dynamically
-// document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll("nav a");
+  const sections = document.querySelectorAll("section");
 
-// // Smooth scroll for nav links
-// document.querySelectorAll('.navbar a').forEach(link => {
-//   link.addEventListener('click', function(e){
-//     e.preventDefault();
-//     const target = document.querySelector(this.getAttribute('href'));
-//     if(target) target.scrollIntoView({ behavior: 'smooth' });
-//   });
-// });
+  function showSection(id) {
+    sections.forEach(sec => {
+      if (sec.id === id) {
+        sec.style.display = "block";
+      } else {
+        sec.style.display = "none";
+      }
+    });
+  }
+
+  // default: show home only
+  showSection("home");
+  document.getElementById("about").style.display = "block"; // also show About with Home
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+
+      showSection(targetId);
+
+      // special case: when Home is shown, also show About
+      if (targetId === "home") {
+        document.getElementById("about").style.display = "block";
+      }
+    });
+  });
+});
