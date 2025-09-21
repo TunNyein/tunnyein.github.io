@@ -5,6 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tun Nyein - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #191515;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #ffffff;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+    }
+    .navbar a.active {
+      border-bottom: 2px solid #000000;
+    }
+
+    /* Sections */
+    .section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section.active {
+      display: block;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    /* CV Button */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ffffff;
+      color: #000000;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    /* Social Links */
+    .social-links {
+      margin: 15px 0;
+    }
+    .social-links a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    /* Card-style white box */
+    .about-card, .timeline-item, .project-item, .cert {
+      background: #ffffff;
+      color: #000000;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffffff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Timeline (Experiences) */
+    .timeline-item h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    /* Projects */
+    .project-item h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .project-item a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Certifications */
+    .cert img {
+      width: 80px;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .cert a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -50,100 +182,82 @@
 
   <!-- Projects -->
   <section id="projects" class="section">
-    <!-- <h3>🚀 Projects</h3> -->
-    <div class="card-container">
-      <div class="card">
-        <h4>AWS SSM Project with S3 Bucket</h4>
-        <p>Automated EC2 management using AWS Systems Manager (SSM) with secure S3 logging for auditing.</p>
-        <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-
-      <div class="card">
-        <h4>AWS SSM Project with VPC Endpoints</h4>
-        <p>Configured SSM to manage instances securely via VPC Interface Endpoints, without exposing traffic to the internet.</p>
-        <a href="https://gitlab.com/tunnyein/aws-ssm-project-01-with-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-
-      <div class="card">
-        <h4>AWS SSM Project with without vpc endpoints</h4>
-        <p>Implemented SSM automation for EC2 instances without VPC endpoints, demonstrating standard SSM workflows.</p>
-        <a href="https://gitlab.com/tunnyein/aws-ssm-project-02-without-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-
-      <div class="card">
-        <h4>Harbor Private Registry on AWS EC2</h4>
-        <p>Deployed a private Harbor container registry on EC2 with TLS and Terraform automation for secure image management.</p>
-        <a href="https://www.notion.so/tunnyein/Harbor-Private-Registry-on-AWS-with-TLS-26d56eb0dd798119961ef209b4e4125f" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-
-      <div class="card">
-        <h4>Terraform VPC Automation</h4>
-        <p>Created reusable Terraform modules for VPCs, subnets, and routing to simplify network infrastructure provisioning.</p>
-        <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-
-      <div class="card">
-        <h4>AWS Intra Region VPC Peering</h4>
-        <p>Developed VPC peering, subnets, and routing for efficient intra-region network management.</p>
-        <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
+    <h3 class="section-title">🚀 Projects</h3>
+    <div class="project-item">
+      <h4>AWS SSM Project with S3 Bucket</h4>
+      <p>Automated EC2 management using AWS Systems Manager (SSM) with secure S3 logging for auditing.</p>
+      <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank" rel="noopener">View on GitLab →</a>
+    </div>
+    <div class="project-item">
+      <h4>AWS SSM Project with VPC Endpoints</h4>
+      <p>Configured SSM to manage instances securely via VPC Interface Endpoints, without exposing traffic to the internet.</p>
+      <a href="https://gitlab.com/tunnyein/aws-ssm-project-01-with-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
+    </div>
+    <div class="project-item">
+      <h4>AWS SSM Project without VPC Endpoints</h4>
+      <p>Implemented SSM automation for EC2 instances without VPC endpoints, demonstrating standard SSM workflows.</p>
+      <a href="https://gitlab.com/tunnyein/aws-ssm-project-02-without-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
+    </div>
+    <div class="project-item">
+      <h4>Harbor Private Registry on AWS EC2</h4>
+      <p>Deployed a private Harbor container registry on EC2 with TLS and Terraform automation for secure image management.</p>
+      <a href="https://www.notion.so/tunnyein/Harbor-Private-Registry-on-AWS-with-TLS-26d56eb0dd798119961ef209b4e4125f" target="_blank" rel="noopener">View on GitLab →</a>
+    </div>
+    <div class="project-item">
+      <h4>Terraform VPC Automation</h4>
+      <p>Created reusable Terraform modules for VPCs, subnets, and routing to simplify network infrastructure provisioning.</p>
+      <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
+    </div>
+    <div class="project-item">
+      <h4>AWS Intra Region VPC Peering</h4>
+      <p>Developed VPC peering, subnets, and routing for efficient intra-region network management.</p>
+      <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
     </div>
   </section>
 
   <!-- Experiences -->
   <section id="experiences" class="section">
-    <!-- <h3>💼 Experiences</h3> -->
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>IT Officer - ADRA Myanmar (2024–Present)</h4>
-        <p>Managing cloud & IT infrastructure while transitioning into DevOps engineering.</p>
-      </div>
-      <div class="timeline-item">
-        <h4>ICT Specialist - ICRC (2019–2024)</h4>
-        <p>Administered networks, servers, and security systems in mission-critical environments.</p>
-      </div>
-      <div class="timeline-item">
-        <h4>Network Engineer - GKFF (2012–2018)</h4>
-        <p>Designed and managed network infrastructure including satellite communications.</p>
-      </div>
+    <h3 class="section-title">💼 Experiences</h3>
+    <div class="timeline-item">
+      <h4>IT Officer - ADRA Myanmar (2024–Present)</h4>
+      <p>Managing cloud & IT infrastructure while transitioning into DevOps engineering.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>ICT Specialist - ICRC (2019–2024)</h4>
+      <p>Administered networks, servers, and security systems in mission-critical environments.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Network Engineer - GKFF (2012–2018)</h4>
+      <p>Designed and managed network infrastructure including satellite communications.</p>
     </div>
   </section>
 
   <!-- Certifications -->
   <section id="certifications" class="section">
-    <!-- <h3>📜 Certifications</h3> -->
-    <div class="cert-grid">
-      <div class="cert">
-        <img src="images/cka_from_cncfsite__281_29.png" alt="AWS Cert" />
-        <p><a href="https://www.credly.com/badges/d8c25bb1-b2ec-47ba-9916-45170d312bce/public_url" target="_blank" rel="noopener">AWS Certified Solutions Architect</a></p>
-      </div>
-      <div class="cert">
-        <img src="images/blob.png" alt="Terraform Cert" />
-        <p><a href="https://www.credly.com/" target="_blank" rel="noopener">HashiCorp: Terraform Associate</a></p>
-      </div>
-      <div class="cert">
-        <img src="images/MCSE-Cloud-Platform-Infrastructure-2018.png" alt="Kubernetes Cert" />
-        <p><a href="https://www.credly.com/" target="_blank" rel="noopener">Certified Kubernetes Administrator (CKA)</a></p>
-      </div>
+    <h3 class="section-title">📜 Certifications</h3>
+    <div class="cert">
+      <img src="images/cka_from_cncfsite__281_29.png" alt="AWS Cert" />
+      <p><a href="https://www.credly.com/badges/d8c25bb1-b2ec-47ba-9916-45170d312bce/public_url" target="_blank" rel="noopener">AWS Certified Solutions Architect</a></p>
+    </div>
+    <div class="cert">
+      <img src="images/blob.png" alt="Terraform Cert" />
+      <p><a href="https://www.credly.com/" target="_blank" rel="noopener">HashiCorp: Terraform Associate</a></p>
+    </div>
+    <div class="cert">
+      <img src="images/MCSE-Cloud-Platform-Infrastructure-2018.png" alt="Kubernetes Cert" />
+      <p><a href="https://www.credly.com/" target="_blank" rel="noopener">Certified Kubernetes Administrator (CKA)</a></p>
     </div>
   </section>
 
   <!-- Script -->
   <script>
     function showSection(id) {
-      // hide all sections
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-
-      // show selected
       const el = document.getElementById(id);
       if (el) el.classList.add('active');
-
-      // highlight navbar
       document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
       const active = document.querySelector(`.navbar a[data-target="${id}"]`);
       if (active) active.classList.add('active');
-
-      // scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -154,8 +268,6 @@
           showSection(a.dataset.target);
         });
       });
-
-      // show home by default
       showSection('home');
     });
   </script>
