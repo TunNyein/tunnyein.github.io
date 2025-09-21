@@ -1,38 +1,44 @@
-/* Hide all sections by default */
-.section {
-  display: none;
-  padding: 2rem;
-}
-
-/* Show only the active section */
-.section.active {
-  display: block;
+/* Body */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #191515; /* black background */
+  color: #fff; /* text color for readability */
 }
 
 /* Navbar styling */
 .navbar {
-  background: #f5f5f5;
+  background-color: #ffffff; /* white navbar */
   padding: 1rem;
   text-align: center;
+  position: sticky; /* keeps navbar on top */
+  top: 0;
+  z-index: 100;
 }
 
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: inline-flex;
-  gap: 1.5rem;
-}
-
+/* Navbar links */
 .navbar a {
   text-decoration: none;
-  color: #333;
+  color: #333; /* dark text for white navbar */
   font-weight: 500;
+  padding: 0.5rem 1rem;
 }
 
 .navbar a.active {
-  color: #007bff;
+  color: #007bff; /* highlight active link */
   font-weight: bold;
+}
+
+/* Sections (content under navbar) */
+.section {
+  display: none; /* hide by default */
+  padding: 2rem;
+  background-color: transparent; /* inherits black body background */
+}
+
+/* Show active section */
+.section.active {
+  display: block;
 }
 
 /* Hero section */
@@ -48,15 +54,17 @@
   border: 3px solid #ddd;
 }
 
+/* About card */
 .about-card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: #1a1a1a; /* dark card background */
+  border: 1px solid #333;
   border-radius: 12px;
   padding: 1.5rem;
   margin: 2rem auto;
   max-width: 600px;
   text-align: left;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  color: #fff;
 }
 
 /* Card containers */
@@ -68,11 +76,12 @@
 
 .card {
   flex: 1 1 300px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: #1a1a1a; /* dark card background */
+  border: 1px solid #333;
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  color: #fff;
 }
 
 /* Certifications grid */
@@ -85,4 +94,9 @@
 .cert {
   flex: 1 1 200px;
   text-align: center;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
 }
