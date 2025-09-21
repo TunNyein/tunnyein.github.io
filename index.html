@@ -1,163 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tun Nyein - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Reset */
-    * {
+    /* Body background */
+    body {
+      background-color: #322e2e;
+      color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #3e3939;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    /* Navbar */
+    /* Navbar styling */
     .navbar {
-      background: #ffffff;
-      padding: 15px 20px;
+      background: #ffffff; /* White background */
+      padding: 1rem;
+      text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
+
     .navbar ul {
       list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      gap: 1.5rem;
     }
+
     .navbar a {
       text-decoration: none;
-      color: #000000;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .navbar a.active {
+      color: #007bff;
       font-weight: bold;
     }
-    .navbar a.active {
-      border-bottom: 2px solid #000000;
-    }
 
-    /* Sections */
-    .section {
-      display: none;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .section.active {
-      display: block;
-    }
-
-    /* Hero */
+    /* Hero section */
     .hero {
       text-align: center;
+      padding: 2rem;
     }
+
     .profile-img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      margin-bottom: 15px;
+      margin: 1rem auto;
+      border: 3px solid #ddd;
     }
 
-    /* CV Button */
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
+    /* About Card */
+    .about-card {
       background: #ffffff;
       color: #000000;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    /* Social Links */
-    .social-links {
-      margin: 15px 0;
-    }
-    .social-links a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    /* Card-style white box */
-    .about-card, .timeline-item, .project-item, .cert {
-      background: #ffffff;
-      color: #000000;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-
-    /* Justify About Me text */
-    .about-card p {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 600px;
       text-align: justify;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    /* Section Titles */
-    .section-title {
-      font-size: 24px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ffffff;
+    /* Download CV button */
+    .cv-button {
       display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    /* Timeline (Experiences) */
-    .timeline-item h4 {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    /* Projects */
-    .section#projects {
-      text-align: center;
-    }
-    .project-item {
-      text-align: left;
-      max-width: 700px;
-      margin: 0 auto 20px auto;
-    }
-    .project-item h4 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .project-item a {
-      color: #0077cc;
+      background: #007bff;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      margin: 1rem auto;
     }
 
-    /* Certifications */
-    .section#certifications {
-      text-align: center;
+    .cv-button:hover {
+      background: #0056b3;
     }
-    .cert img {
-      width: 80px;
-      height: auto;
+
+    /* Section base */
+    .section {
+      display: none;
+      padding: 2rem;
+    }
+
+    .section.active {
       display: block;
-      margin: 0 auto 10px auto;
-    }
-    .cert {
-      display: inline-block;
-      width: 200px;
-      margin: 15px;
-      vertical-align: top;
-    }
-    .cert a {
-      color: #0077cc;
-      text-decoration: none;
-      font-weight: bold;
     }
 
+    /* Section titles */
+    .section h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section h3::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #007bff;
+      margin: 0.5rem auto 1.5rem;
+      border-radius: 2px;
+    }
+
+    /* Card containers - stacked vertically */
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* Individual cards */
+    .card {
+      width: 100%;
+      max-width: 600px;
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: justify;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Certifications grid - vertical */
+    .cert-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .cert {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .cert img {
+      width: 100px;   /* Smaller logo size */
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -165,134 +166,109 @@
   <!-- Navbar -->
   <nav class="navbar">
     <ul>
-      <li><a href="#home" data-target="home">HOME</a></li>
-      <li><a href="#projects" data-target="projects">PROJECTS</a></li>
-      <li><a href="#experiences" data-target="experiences">EXPERIENCES</a></li>
-      <li><a href="#certifications" data-target="certifications">CERTIFICATIONS</a></li>
+      <li><a href="#home" class="active">HOME</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#experience">EXPERIENCES</a></li>
+      <li><a href="#certifications">CERTIFICATIONS</a></li>
     </ul>
   </nav>
 
-  <!-- Home -->
-  <section id="home" class="section hero">
-    <img src="images/tn-img.jpeg" alt="Profile Picture" class="profile-img" />
-    <h1>Tun Nyein</h1>
-    <h2>Cloud & DevOps Engineer</h2>
+  <!-- Hero -->
+  <section id="home" class="hero section active">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+    <h2>Tun Nyein</h2>
+    <h4>Cloud & DevOps Engineer</h4>
+    <p>Address: Yangon, Myanmar</p>
+    <p>Email: tunnyein.ict@gmail.com</p>
 
-    <p><strong>Address:</strong> Yangon, Myanmar</p>
-    <p><strong>Email:</strong> tunnyein.ict@gmail.com</p>
-
-    <a href="https://drive.usercontent.google.com/u/0/uc?id=1j4zU246VTm88dqG1m4GJ4bLB3CXBI_i0&export=download"
-       class="btn" target="_blank" rel="noopener">DOWNLOAD CV ↓</a>
-
-    <div class="social-links">
-      <a href="https://gitlab.com/tunnyein" target="_blank" rel="noopener">Gitlab</a> |
-      <a href="https://www.linkedin.com/in/nyein-tun/" target="_blank" rel="noopener">LinkedIn</a> |
-      <a href="#" target="_blank" rel="noopener">Blog</a>
-    </div>
+    <a href="cv.pdf" class="cv-button">DOWNLOAD CV ↓</a>
+    <p>Gitlab | LinkedIn | Blog</p>
 
     <div class="about-card">
       <h3>👋 About Me</h3>
       <p>
-        Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system and
-        network administration into cloud platforms, automation, and containerized environments.
-        I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation.
-        I’m passionate about simplifying infrastructure with Infrastructure as Code, containerized workloads,
-        and DevOps best practices.
+        Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system 
+        and network administration into cloud platforms, automation, and containerized environments. 
+        I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation. I’m passionate about 
+        simplifying infrastructure with Infrastructure as Code, containerized workloads, and DevOps best practices.
       </p>
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects" class="section">
-    <h3 class="section-title">🚀 Projects</h3>
-    <div class="project-item">
-      <h4>AWS SSM Project with S3 Bucket</h4>
-      <p>Automated EC2 management using AWS Systems Manager (SSM) with secure S3 logging for auditing.</p>
-      <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank" rel="noopener">View on GitLab →</a>
-    </div>
-    <div class="project-item">
-      <h4>AWS SSM Project with VPC Endpoints</h4>
-      <p>Configured SSM to manage instances securely via VPC Interface Endpoints, without exposing traffic to the internet.</p>
-      <a href="https://gitlab.com/tunnyein/aws-ssm-project-01-with-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
-    </div>
-    <div class="project-item">
-      <h4>AWS SSM Project without VPC Endpoints</h4>
-      <p>Implemented SSM automation for EC2 instances without VPC endpoints, demonstrating standard SSM workflows.</p>
-      <a href="https://gitlab.com/tunnyein/aws-ssm-project-02-without-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
-    </div>
-    <div class="project-item">
-      <h4>Harbor Private Registry on AWS EC2</h4>
-      <p>Deployed a private Harbor container registry on EC2 with TLS and Terraform automation for secure image management.</p>
-      <a href="https://www.notion.so/tunnyein/Harbor-Private-Registry-on-AWS-with-TLS-26d56eb0dd798119961ef209b4e4125f" target="_blank" rel="noopener">View on GitLab →</a>
-    </div>
-    <div class="project-item">
-      <h4>Terraform VPC Automation</h4>
-      <p>Created reusable Terraform modules for VPCs, subnets, and routing to simplify network infrastructure provisioning.</p>
-      <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
-    </div>
-    <div class="project-item">
-      <h4>AWS Intra Region VPC Peering</h4>
-      <p>Developed VPC peering, subnets, and routing for efficient intra-region network management.</p>
-      <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
+    <h3>Projects</h3>
+    <div class="card-container">
+      <div class="card">
+        <h4>AWS SSM Project with S3 Bucket</h4>
+        <p>Automated EC2 management using AWS Systems Manager (SSM) with secure S3 logging for auditing.</p>
+        <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank" rel="noopener">View on GitLab →</a>
+      </div>
+      <div class="card">
+        <h4>AWS SSM Project with VPC Endpoints</h4>
+        <p>Configured SSM to manage instances securely via VPC Interface Endpoints, without exposing traffic to the internet.</p>
+        <a href="https://gitlab.com/tunnyein/aws-ssm-project-01-with-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
+      </div>
+      <div class="card">
+        <h4>AWS SSM Project without VPC Endpoints</h4>
+        <p>Implemented SSM automation for EC2 instances without VPC endpoints, demonstrating standard SSM workflows.</p>
+        <a href="https://gitlab.com/tunnyein/aws-ssm-project-02-without-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
+      </div>
+      <div class="card">
+        <h4>Harbor Private Registry on AWS EC2</h4>
+        <p>Deployed a private Harbor container registry on EC2 with TLS and Terraform automation for secure image management.</p>
+        <a href="https://www.notion.so/tunnyein/Harbor-Private-Registry-on-AWS-with-TLS-26d56eb0dd798119961ef209b4e4125f" target="_blank" rel="noopener">View on Notion →</a>
+      </div>
+      <div class="card">
+        <h4>Terraform VPC Automation</h4>
+        <p>Created reusable Terraform modules for VPCs, subnets, and routing to simplify network infrastructure provisioning.</p>
+        <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
+      </div>
+      <div class="card">
+        <h4>AWS Intra Region VPC Peering</h4>
+        <p>Developed VPC peering, subnets, and routing for efficient intra-region network management.</p>
+        <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
+      </div>
     </div>
   </section>
 
-  <!-- Experiences -->
-  <section id="experiences" class="section">
-    <h3 class="section-title">💼 Experiences</h3>
-    <div class="timeline-item">
-      <h4>IT Officer - ADRA Myanmar (2024–Present)</h4>
-      <p>Managing cloud & IT infrastructure while transitioning into DevOps engineering.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>ICT Specialist - ICRC (2019–2024)</h4>
-      <p>Administered networks, servers, and security systems in mission-critical environments.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>Network Engineer - GKFF (2012–2018)</h4>
-      <p>Designed and managed network infrastructure including satellite communications.</p>
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <h3>Experience</h3>
+    <div class="card-container">
+      <div class="card">
+        <h4>IT Officer - ADRA Myanmar (2024–Present)</h4>
+        <p>Managing cloud & IT infrastructure while transitioning into DevOps engineering.</p>
+      </div>
+      <div class="card">
+        <h4>ICT Specialist - ICRC (2019–2024)</h4>
+        <p>Administered networks, servers, and security systems in mission-critical environments.</p>
+      </div>
+      <div class="card">
+        <h4>Network Engineer - GKFF (2012–2018)</h4>
+        <p>Designed and managed network infrastructure including satellite communications.</p>
+      </div>
     </div>
   </section>
 
   <!-- Certifications -->
   <section id="certifications" class="section">
-    <h3 class="section-title">📜 Certifications</h3>
-    <div class="cert">
-      <img src="images/cka_from_cncfsite__281_29.png" alt="AWS Cert" />
-      <p><a href="https://www.credly.com/badges/d8c25bb1-b2ec-47ba-9916-45170d312bce/public_url" target="_blank" rel="noopener">AWS Certified Solutions Architect</a></p>
-    </div>
-    <div class="cert">
-      <img src="images/blob.png" alt="Terraform Cert" />
-      <p><a href="https://www.credly.com/" target="_blank" rel="noopener">HashiCorp: Terraform Associate</a></p>
-    </div>
-    <div class="cert">
-      <img src="images/MCSE-Cloud-Platform-Infrastructure-2018.png" alt="Kubernetes Cert" />
-      <p><a href="https://www.credly.com/" target="_blank" rel="noopener">Certified Kubernetes Administrator (CKA)</a></p>
+    <h3>Certifications</h3>
+    <div class="cert-grid">
+      <div class="cert">
+        <img src="aws-cert.png" alt="AWS Certification">
+        <p>AWS Certified Solutions Architect</p>
+      </div>
+      <div class="cert">
+        <img src="terraform-cert.png" alt="Terraform Certification">
+        <p>HashiCorp: Terraform Associate</p>
+      </div>
+      <div class="cert">
+        <img src="kubernetes-cert.png" alt="Kubernetes Certification">
+        <p>Certified Kubernetes Administrator (CKA)</p>
+      </div>
     </div>
   </section>
-
-  <!-- Script -->
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      const el = document.getElementById(id);
-      if (el) el.classList.add('active');
-      document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
-      const active = document.querySelector(`.navbar a[data-target="${id}"]`);
-      if (active) active.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.navbar a[data-target]').forEach(a => {
-        a.addEventListener('click', e => {
-          e.preventDefault();
-          showSection(a.dataset.target);
-        });
-      });
-      showSection('home');
-    });
-  </script>
 
 </body>
 </html>
