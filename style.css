@@ -1,31 +1,24 @@
-Profile Image - remove black background
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
 .profile-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  object-fit: cover;
-  background: transparent !important;   /* force transparent */
+  margin: 1rem auto;
+  display: block; /* ensures centered */
   border: 3px solid #ddd;
-  margin-bottom: 15px;
 }
 
-/* About Me card */
 .about-card {
-  background: #fff !important;  /* force white background */
+  background: #f9f9f9;
   border: 1px solid #ddd;
-  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-top: 20px;
-}
-
-/* About Me text */
-.about-card h3 {
-  margin-bottom: 10px;
-  color: #000 !important;  /* force black title */
-}
-
-.about-card p {
-  color: #000 !important;  /* force black text */
-  line-height: 1.6;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
