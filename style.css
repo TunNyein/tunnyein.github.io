@@ -1,57 +1,51 @@
-/* Body */
+/* General body */
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #191515; /* black background */
-  color: #fff; /* white text by default */
+  font-family: Arial, sans-serif;
+  background-color: #191515; /* dark background */
+  color: #fff;
 }
 
-/* Hide all sections by default */
+/* Sections */
 .section {
   display: none;
   padding: 2rem;
 }
 
-/* Show active section */
 .section.active {
   display: block;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #ffffff; /* white navbar */
-  padding: 1rem 0;
+  background: #e5e5e500; /* transparent white */
+  padding: 1rem;
+  text-align: center;
   position: sticky;
   top: 0;
-  z-index: 100;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 10;
 }
 
 .navbar ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+  display: inline-flex;
+  gap: 1.5rem;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  transition: color 0.2s;
 }
 
-.navbar a.active,
-.navbar a:hover {
+.navbar a.active {
   color: #007bff;
   font-weight: bold;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
   text-align: center;
 }
@@ -64,20 +58,55 @@ body {
   border: 3px solid #ddd;
 }
 
-/* About Card */
-.about-card {
-  background-color: #ffffff;   /* white background */
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 600px;
-  text-align: left;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  color: #000; /* black text */
+/* Download CV button */
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1.5rem 0; /* spacing */
+  transition: background-color 0.3s ease;
 }
 
-/* Card containers */
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Social links */
+.social-links {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.5rem;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+/* White text boxes */
+.about-card,
+.card,
+.timeline-item,
+.cert {
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Projects container */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -87,15 +116,9 @@ body {
 
 .card {
   flex: 1 1 300px;
-  background-color: #ffffff;  /* white background */
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  color: #000; /* black text */
 }
 
-/* Certifications Grid */
+/* Certifications grid */
 .cert-grid {
   display: flex;
   flex-wrap: wrap;
@@ -106,33 +129,4 @@ body {
 .cert {
   flex: 1 1 200px;
   text-align: center;
-  background-color: #ffffff;  /* white background */
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  color: #000; /* black text */
-}
-
-.cert img {
-  max-width: 100px;
-  margin-bottom: 0.5rem;
-}
-
-/* Timeline for Experiences */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.timeline-item {
-  background-color: #ffffff;  /* white background */
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  color: #000; /* black text */
 }
