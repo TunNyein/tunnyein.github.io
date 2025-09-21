@@ -17,36 +17,36 @@
     </ul>
   </nav>
 
-  <!-- Home (hero) -->
+  <!-- Home (hero + about inside it) -->
   <section id="home" class="section hero">
-  <img src="images/tn-img.jpeg" alt="Profile Picture" class="profile-img" />
-  <h1>Tun Nyein</h1>
-  <h2>Cloud & DevOps Engineer</h2>
+    <img src="images/tn-img.jpeg" alt="Profile Picture" class="profile-img" />
+    <h1>Tun Nyein</h1>
+    <h2>Cloud & DevOps Engineer</h2>
 
-  <p><strong>Address:</strong> Yangon, Myanmar</p>
-  <p><strong>Email:</strong> tunnyein.ict@gmail.com</p>
+    <p><strong>Address:</strong> Yangon, Myanmar</p>
+    <p><strong>Email:</strong> tunnyein.ict@gmail.com</p>
 
-  <a href="https://drive.usercontent.google.com/u/0/uc?id=1j4zU246VTm88dqG1m4GJ4bLB3CXBI_i0&export=download"
-     class="btn" target="_blank" rel="noopener">DOWNLOAD CV ↓</a>
+    <a href="https://drive.usercontent.google.com/u/0/uc?id=1j4zU246VTm88dqG1m4GJ4bLB3CXBI_i0&export=download"
+       class="btn" target="_blank" rel="noopener">DOWNLOAD CV ↓</a>
 
-  <div class="social-links">
-    <a href="https://gitlab.com/tunnyein" target="_blank" rel="noopener">Gitlab</a> |
-    <a href="https://www.linkedin.com/in/nyein-tun/" target="_blank" rel="noopener">LinkedIn</a> |
-    <a href="#" target="_blank" rel="noopener">Blog</a>
-  </div>
+    <div class="social-links">
+      <a href="https://gitlab.com/tunnyein" target="_blank" rel="noopener">Gitlab</a> |
+      <a href="https://www.linkedin.com/in/nyein-tun/" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="#" target="_blank" rel="noopener">Blog</a>
+    </div>
 
-  <!-- About Section embedded inside Home -->
-  <div class="about-card">
-    <h3>👋 About Me</h3>
-    <p>
-      Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system and
-      network administration into cloud platforms, automation, and containerized environments.
-      I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation.
-      I’m passionate about simplifying infrastructure with Infrastructure as Code, containerized workloads,
-      and DevOps best practices.
-    </p>
-  </div>
-</section>
+    <!-- About (card inside home) -->
+    <div class="about-card">
+      <h3>👋 About Me</h3>
+      <p>
+        Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system and
+        network administration into cloud platforms, automation, and containerized environments.
+        I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation.
+        I’m passionate about simplifying infrastructure with Infrastructure as Code, containerized workloads,
+        and DevOps best practices.
+      </p>
+    </div>
+  </section>
 
   <!-- Projects -->
   <section id="projects" class="section">
@@ -110,44 +110,33 @@
     </div>
   </section>
 
-  <!-- Script (no nested script tags) -->
+  <!-- Script -->
   <script>
-    // Show/hide sections and highlight nav
     function showSection(id) {
-      // Hide all sections
+      // hide all
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
 
-      // If user clicked 'home', show home + about together
-      if (id === 'home') {
-        const homeEl = document.getElementById('home');
-        const aboutEl = document.getElementById('about');
-        if (homeEl) homeEl.classList.add('active');
-        if (aboutEl) aboutEl.classList.add('active');
-      } else {
-        const el = document.getElementById(id);
-        if (el) el.classList.add('active');
-      }
+      // show only selected
+      const el = document.getElementById(id);
+      if (el) el.classList.add('active');
 
-      // Highlight active nav link
+      // update nav highlight
       document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
       const active = document.querySelector(`.navbar a[data-target="${id}"]`);
       if (active) active.classList.add('active');
 
-      // Scroll to top smoothly when switching
+      // scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Wire nav clicks + show default (home)
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.navbar a[data-target]').forEach(a => {
-        a.addEventListener('click', function (e) {
+        a.addEventListener('click', e => {
           e.preventDefault();
-          showSection(this.dataset.target);
+          showSection(a.dataset.target);
         });
       });
-
-      // default view: home (hero + about)
-      showSection('home');
+      showSection('home'); // default
     });
   </script>
 </body>
