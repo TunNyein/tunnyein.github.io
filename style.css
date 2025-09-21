@@ -1,24 +1,30 @@
-.hero {
-  text-align: center;
-  padding: 2rem;
-}
-
+/* Profile Image - remove black background */
 .profile-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin: 1rem auto;
-  display: block; /* ensures centered */
+  object-fit: cover;
+  background: none;   /* remove black background */
   border: 3px solid #ddd;
+  margin-bottom: 15px;
 }
 
+/* About Me text color */
 .about-card {
-  background: #f9f9f9;
+  background: #fff;
   border: 1px solid #ddd;
+  padding: 20px;
   border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 600px;
-  text-align: left;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.about-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.about-card p {
+  color: #000;   /* make text black */
+  line-height: 1.6;
 }
