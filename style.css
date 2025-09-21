@@ -1,44 +1,38 @@
-/* Body */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #191515; /* dark black/red-ish background */
-  color: #fff; /* text color for readability */
+/* Hide all sections by default */
+.section {
+  display: none;
+  padding: 2rem;
 }
 
-/* Navbar */
+/* Show only the active section */
+.section.active {
+  display: block;
+}
+
+/* Navbar styling */
 .navbar {
-  background-color: #e5e5e500; /* white with full transparency */
+  background: #f5f5f5;
   padding: 1rem;
   text-align: center;
-  position: sticky; /* stays at top */
-  top: 0;
-  z-index: 100;
 }
 
-/* Navbar links */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 1.5rem;
+}
+
 .navbar a {
   text-decoration: none;
-  color: #333; /* dark text for white navbar */
+  color: #333;
   font-weight: 500;
-  padding: 0.5rem 1rem;
 }
 
 .navbar a.active {
   color: #007bff;
   font-weight: bold;
-}
-
-/* Sections */
-.section {
-  display: none; /* hide by default */
-  padding: 2rem;
-  background-color: transparent; /* inherit dark body background */
-}
-
-/* Show active section */
-.section.active {
-  display: block;
 }
 
 /* Hero section */
@@ -55,15 +49,14 @@ body {
 }
 
 .about-card {
-  background: #1a1a1a; /* dark card background */
-  border: 1px solid #333;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
   border-radius: 12px;
   padding: 1.5rem;
   margin: 2rem auto;
   max-width: 600px;
   text-align: left;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-  color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* Card containers */
@@ -75,12 +68,11 @@ body {
 
 .card {
   flex: 1 1 300px;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Certifications grid */
@@ -93,9 +85,4 @@ body {
 .cert {
   flex: 1 1 200px;
   text-align: center;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 1rem;
-  color: #fff;
 }
