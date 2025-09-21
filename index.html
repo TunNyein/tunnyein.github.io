@@ -107,11 +107,25 @@
 
   <!-- JS -->
   <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
+    <script>
+  function showSection(id) {
+    // hide all sections
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+    // show clicked section
+    document.getElementById(id).classList.add('active');
+
+    // highlight navbar
+    document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+    document.querySelector(`.navbar a[href="#${id}"]`).classList.add('active');
+  }
+
+  // Show home by default on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    showSection('home');
+  });
+
+
   </script>
 </body>
 </html>
