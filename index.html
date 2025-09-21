@@ -1,274 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tun Nyein - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tun Nyein — Portfolio</title>
+
   <style>
-    /* Body background */
-    body {
-      background-color: #322e2e;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    /* ---------------------------
+       Base / layout
+       --------------------------- */
+    :root {
+      --page-bg: #191515;
+      --nav-bg: #ffffff;
+      --accent: #0077cc;
+      --card-bg: #ffffff;
+      --card-text: #000000;
+      --max-width: 900px;
     }
 
-    /* Navbar styling */
+    * { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--page-bg);
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    /* ---------------------------
+       Navbar
+       --------------------------- */
     .navbar {
-      background: #ffffff; /* White background */
-      padding: 1rem;
-      text-align: center;
+      background: var(--nav-bg);
+      padding: 0.9rem 1rem;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
     }
 
-    .navbar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: inline-flex;
-      gap: 1.5rem;
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
     }
 
     .navbar a {
       text-decoration: none;
-      color: #333;
-      font-weight: 500;
+      color: #111;
+      font-weight: 600;
+      padding: 6px 8px;
+      display: inline-block;
     }
 
     .navbar a.active {
-      color: #007bff;
-      font-weight: bold;
+      color: var(--accent);
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 3px;
     }
 
-    /* Hero section */
+    /* ---------------------------
+       Sections container
+       --------------------------- */
+    .section {
+      display: none;             /* hidden by default */
+      padding: 2.5rem 1rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .section.active {
+      display: block;
+    }
+
+    /* Section title (centered + underline) */
+    .section-title {
+      text-align: center;
+      font-size: 1.9rem;
+      margin: 0 0 1rem 0;
+      color: #fff; /* visible on dark bg above the card */
+    }
+    .section-title + .title-underline {
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      margin: 0.5rem auto 1.25rem auto;
+      border-radius: 3px;
+    }
+
+    /* ---------------------------
+       Hero / Home
+       --------------------------- */
     .hero {
       text-align: center;
-      padding: 2rem;
+      padding-top: 1.5rem;
     }
 
     .profile-img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      margin: 1rem auto;
+      object-fit: cover;
       border: 3px solid #ddd;
-    }
-
-    /* About Card */
-    .about-card {
-      background: #ffffff;
-      color: #000000;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 2rem auto;
-      max-width: 600px;
-      text-align: justify;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Download CV button */
-    .cv-button {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 1rem auto;
-    }
-
-    .cv-button:hover {
-      background: #0056b3;
-    }
-
-    /* Section base */
-    .section {
-      display: none;
-      padding: 2rem;
-    }
-
-    .section.active {
       display: block;
+      margin: 0.5rem auto 1rem auto;
+      background: #e9e9e9;
     }
 
-    /* Section titles */
-    .section h3 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
+    .name { font-size: 1.6rem; margin: 0.25rem 0; color: #fff; }
+    .role { margin: 0; color: #ddd; font-weight: 500; }
 
-    .section h3::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: #007bff;
-      margin: 0.5rem auto 1.5rem;
-      border-radius: 2px;
-    }
+    .contact-line { color: #ddd; margin: 0.25rem 0; }
 
-    /* Card containers - stacked vertically */
-    .card-container {
+    .center-block {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
       align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
     }
 
-    /* Individual cards */
+    /* Download CV button (boxed) */
+    .btn-cv {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+    }
+    .btn-cv:hover { opacity: 0.95; transform: translateY(-1px); }
+
+    .social-links {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+    .social-links a { color: #ddd; text-decoration: none; font-weight: 600; margin: 0 8px; }
+    .social-links a:hover { color: var(--accent); }
+
+    /* ---------------------------
+       Card style (white boxes)
+       --------------------------- */
     .card {
-      width: 100%;
-      max-width: 600px;
-      background: #ffffff;
-      color: #000000;
-      border: 1px solid #ddd;
+      background: var(--card-bg);
+      color: var(--card-text);
       border-radius: 12px;
-      padding: 1rem;
-      text-align: justify;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 18px;
+      margin: 0.75rem auto;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      max-width: var(--max-width);
     }
 
-    /* Certifications grid - vertical */
+    /* Use for project / experience items */
+    .project-item,
+    .timeline-item,
+    .cert {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Ensure text in cards is justified where requested */
+    .about-card p,
+    .project-item p,
+    .timeline-item p {
+      text-align: justify;
+      margin: 0.5rem 0 0;
+      color: #111;
+    }
+
+    .project-item h4,
+    .timeline-item h4 {
+      margin: 0 0 0.4rem 0;
+      color: #000;
+      font-size: 1.05rem;
+    }
+
+    .project-item a,
+    .timeline-item a {
+      display: inline-block;
+      margin-top: 0.6rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .project-item a:hover { text-decoration: underline; }
+
+    /* Certifications layout vertical & centered */
     .cert-grid {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 12px;
       align-items: center;
-    }
-
-    .cert {
-      width: 100%;
-      max-width: 400px;
-      background: #ffffff;
-      color: #000000;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 0;
+      margin: 0;
     }
 
     .cert img {
-      width: 100px;   /* Smaller logo size */
+      width: 92px;
       height: auto;
-      margin-bottom: 0.5rem;
+      display: block;
+      margin: 0 auto 8px auto;
+    }
+
+    .cert p { margin: 0; font-weight: 700; color: #000; }
+
+    /* Responsive small-screen tweaks */
+    @media (max-width: 640px) {
+      .nav-inner { gap: 12px; padding: 0 6px; }
+      .profile-img { width: 120px; height: 120px; }
+      .card { padding: 14px; border-radius: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#home" class="active">HOME</a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#experience">EXPERIENCES</a></li>
-      <li><a href="#certifications">CERTIFICATIONS</a></li>
-    </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <!-- NOTE: data-target attributes are required by the JS -->
+      <a href="#home" data-target="home" class="">HOME</a>
+      <a href="#projects" data-target="projects">PROJECTS</a>
+      <a href="#experiences" data-target="experiences">EXPERIENCES</a>
+      <a href="#certifications" data-target="certifications">CERTIFICATIONS</a>
+    </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="hero section active">
-    <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-    <h2>Tun Nyein</h2>
-    <h4>Cloud & DevOps Engineer</h4>
-    <p>Address: Yangon, Myanmar</p>
-    <p>Email: tunnyein.ict@gmail.com</p>
+  <!-- HOME -->
+  <main>
+    <section id="home" class="section">
+      <div class="hero">
+        <img class="profile-img" src="images/tn-img.jpeg" alt="Tun Nyein — profile" />
+        <h1 class="name">Tun Nyein</h1>
+        <p class="role">Cloud & DevOps Engineer</p>
 
-    <a href="cv.pdf" class="cv-button">DOWNLOAD CV ↓</a>
-    <p>Gitlab | LinkedIn | Blog</p>
+        <p class="contact-line"><strong>Address:</strong> Yangon, Myanmar</p>
+        <p class="contact-line"><strong>Email:</strong> tunnyein.ict@gmail.com</p>
 
-    <div class="about-card">
-      <h3>👋 About Me</h3>
-      <p>
-        Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system 
-        and network administration into cloud platforms, automation, and containerized environments. 
-        I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation. I’m passionate about 
-        simplifying infrastructure with Infrastructure as Code, containerized workloads, and DevOps best practices.
-      </p>
-    </div>
-  </section>
+        <div class="center-block" style="margin-top:12px;">
+          <a class="btn-cv" href="https://drive.usercontent.google.com/u/0/uc?id=1j4zU246VTm88dqG1m4GJ4bLB3CXBI_i0&export=download" target="_blank" rel="noopener">DOWNLOAD CV ↓</a>
+          <div class="social-links">
+            <a href="https://gitlab.com/tunnyein" target="_blank" rel="noopener">GitLab</a> |
+            <a href="https://www.linkedin.com/in/nyein-tun/" target="_blank" rel="noopener">LinkedIn</a> |
+            <a href="#" target="_blank" rel="noopener">Blog</a>
+          </div>
+        </div>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h3>Projects</h3>
-    <div class="card-container">
-      <div class="card">
-        <h4>AWS SSM Project with S3 Bucket</h4>
+        <div class="card about-card" style="margin-top:18px; max-width:800px;">
+          <h3 style="margin:0 0 .5rem 0;">👋 About Me</h3>
+          <p>
+            Hi, I’m Tun Nyein — Cloud and DevOps Engineer transitioning from 10+ years of IT system
+            and network administration into cloud platforms, automation, and containerized environments.
+            I specialize in AWS, Terraform, Kubernetes, CI/CD, and automation. I’m passionate about
+            simplifying infrastructure with Infrastructure as Code, containerized workloads,
+            and DevOps best practices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h3 class="section-title">🚀 Projects</h3>
+      <div class="title-underline" aria-hidden="true"></div>
+
+      <article class="card project-item">
+        <h4>AWS SSM Automation with S3 Logging</h4>
         <p>Automated EC2 management using AWS Systems Manager (SSM) with secure S3 logging for auditing.</p>
         <a href="https://gitlab.com/tunnyein/aws-ssm-project-03-with-s3-bucket" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-      <div class="card">
-        <h4>AWS SSM Project with VPC Endpoints</h4>
+      </article>
+
+      <article class="card project-item">
+        <h4>AWS SSM with VPC Endpoints</h4>
         <p>Configured SSM to manage instances securely via VPC Interface Endpoints, without exposing traffic to the internet.</p>
         <a href="https://gitlab.com/tunnyein/aws-ssm-project-01-with-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-      <div class="card">
-        <h4>AWS SSM Project without VPC Endpoints</h4>
+      </article>
+
+      <article class="card project-item">
+        <h4>AWS SSM without VPC Endpoints</h4>
         <p>Implemented SSM automation for EC2 instances without VPC endpoints, demonstrating standard SSM workflows.</p>
         <a href="https://gitlab.com/tunnyein/aws-ssm-project-02-without-vpc-endpoints" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-      <div class="card">
+      </article>
+
+      <article class="card project-item">
         <h4>Harbor Private Registry on AWS EC2</h4>
         <p>Deployed a private Harbor container registry on EC2 with TLS and Terraform automation for secure image management.</p>
         <a href="https://www.notion.so/tunnyein/Harbor-Private-Registry-on-AWS-with-TLS-26d56eb0dd798119961ef209b4e4125f" target="_blank" rel="noopener">View on Notion →</a>
-      </div>
-      <div class="card">
-        <h4>Terraform VPC Automation</h4>
+      </article>
+
+      <article class="card project-item">
+        <h4>Terraform VPC & Subnet Automation</h4>
         <p>Created reusable Terraform modules for VPCs, subnets, and routing to simplify network infrastructure provisioning.</p>
         <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-      <div class="card">
-        <h4>AWS Intra Region VPC Peering</h4>
+      </article>
+
+      <article class="card project-item">
+        <h4>AWS Intra-Region VPC Peering</h4>
         <p>Developed VPC peering, subnets, and routing for efficient intra-region network management.</p>
         <a href="https://gitlab.com/tunnyein/aws-intra-region-vpc-peering-terraform" target="_blank" rel="noopener">View on GitLab →</a>
-      </div>
-    </div>
-  </section>
+      </article>
+    </section>
 
-  <!-- Experience -->
-  <section id="experience" class="section">
-    <h3>Experience</h3>
-    <div class="card-container">
-      <div class="card">
-        <h4>IT Officer - ADRA Myanmar (2024–Present)</h4>
+    <!-- EXPERIENCES -->
+    <section id="experiences" class="section">
+      <h3 class="section-title">💼 Experiences</h3>
+      <div class="title-underline" aria-hidden="true"></div>
+
+      <div class="card timeline-item">
+        <h4>IT Officer — ADRA Myanmar (2024–Present)</h4>
         <p>Managing cloud & IT infrastructure while transitioning into DevOps engineering.</p>
       </div>
-      <div class="card">
-        <h4>ICT Specialist - ICRC (2019–2024)</h4>
+
+      <div class="card timeline-item">
+        <h4>ICT Specialist — ICRC (2019–2024)</h4>
         <p>Administered networks, servers, and security systems in mission-critical environments.</p>
       </div>
-      <div class="card">
-        <h4>Network Engineer - GKFF (2012–2018)</h4>
+
+      <div class="card timeline-item">
+        <h4>Network Engineer — GKFF (2012–2018)</h4>
         <p>Designed and managed network infrastructure including satellite communications.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certifications -->
-  <section id="certifications" class="section">
-    <h3>Certifications</h3>
-    <div class="cert-grid">
-      <div class="cert">
-        <img src="aws-cert.png" alt="AWS Certification">
-        <p>AWS Certified Solutions Architect</p>
-      </div>
-      <div class="cert">
-        <img src="terraform-cert.png" alt="Terraform Certification">
-        <p>HashiCorp: Terraform Associate</p>
-      </div>
-      <div class="cert">
-        <img src="kubernetes-cert.png" alt="Kubernetes Certification">
-        <p>Certified Kubernetes Administrator (CKA)</p>
-      </div>
-    </div>
-  </section>
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+      <h3 class="section-title">📜 Certifications</h3>
+      <div class="title-underline" aria-hidden="true"></div>
 
+      <div class="cert-grid" role="list">
+        <div class="card cert" role="listitem">
+          <img src="images/cka_from_cncfsite__281_29.png" alt="AWS cert logo" />
+          <p><a href="https://www.credly.com/badges/d8c25bb1-b2ec-47ba-9916-45170d312bce/public_url" target="_blank" rel="noopener">AWS Certified Solutions Architect</a></p>
+        </div>
+
+        <div class="card cert" role="listitem">
+          <img src="images/blob.png" alt="Terraform cert logo" />
+          <p><a href="https://www.credly.com/" target="_blank" rel="noopener">HashiCorp: Terraform Associate</a></p>
+        </div>
+
+        <div class="card cert" role="listitem">
+          <img src="images/MCSE-Cloud-Platform-Infrastructure-2018.png" alt="CKA cert logo" />
+          <p><a href="https://www.credly.com/" target="_blank" rel="noopener">Certified Kubernetes Administrator (CKA)</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Robust showSection: supports data-target or hash in href
+    function showSection(targetId) {
+      if (!targetId) return;
+      // hide all
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      // show selected
+      const targetEl = document.getElementById(targetId);
+      if (!targetEl) return;
+      targetEl.classList.add('active');
+
+      // update nav active state
+      document.querySelectorAll('.navbar a').forEach(a => {
+        const t = a.dataset.target || (a.getAttribute('href') || '').replace('#','');
+        if (t === targetId) a.classList.add('active'); else a.classList.remove('active');
+      });
+
+      // update url hash without scrolling
+      if (history && history.replaceState) {
+        history.replaceState(null, '', '#' + targetId);
+      } else {
+        location.hash = '#' + targetId;
+      }
+
+      // scroll to top of page container smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // attach events to navbar links (robust)
+      document.querySelectorAll('.navbar a').forEach(a => {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.dataset.target || (this.getAttribute('href') || '').replace('#','');
+          showSection(targetId);
+        });
+      });
+
+      // show section based on current hash, else 'home'
+      const hash = (location.hash || '').replace('#','');
+      const initial = hash && document.getElementById(hash) ? hash : 'home';
+      showSection(initial);
+    });
+  </script>
 </body>
 </html>
