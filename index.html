@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <ul>
@@ -17,7 +18,7 @@
     </ul>
   </nav>
 
-  <!-- Home (hero + about inside it) -->
+  <!-- Home -->
   <section id="home" class="section hero">
     <img src="images/tn-img.jpeg" alt="Profile Picture" class="profile-img" />
     <h1>Tun Nyein</h1>
@@ -35,7 +36,6 @@
       <a href="#" target="_blank" rel="noopener">Blog</a>
     </div>
 
-    <!-- About (card inside home) -->
     <div class="about-card">
       <h3>👋 About Me</h3>
       <p>
@@ -113,14 +113,14 @@
   <!-- Script -->
   <script>
     function showSection(id) {
-      // hide all
+      // hide all sections
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
 
-      // show only selected
+      // show selected
       const el = document.getElementById(id);
       if (el) el.classList.add('active');
 
-      // update nav highlight
+      // highlight navbar
       document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
       const active = document.querySelector(`.navbar a[data-target="${id}"]`);
       if (active) active.classList.add('active');
@@ -136,8 +136,11 @@
           showSection(a.dataset.target);
         });
       });
-      showSection('home'); // default
+
+      // show home by default
+      showSection('home');
     });
   </script>
+
 </body>
 </html>
